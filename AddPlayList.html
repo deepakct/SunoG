@@ -1,0 +1,63 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<form action="/GetPlaylist" method="post">
+
+<label>PlayList Name</label>
+<input type="text" name = "name">
+<br/>
+<div th:each="song : ${pl}">
+
+<input type="checkbox" th:name="songs" 
+								th:value="${song.id}">
+								
+<label th:text = "${song.name}"></label>
+</div>
+
+<input type="submit" value="ADD PLAYLIST">
+
+</form>
+
+</body>
+</html>
+
+<!-- 
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+<form action="/GetPlaylist" method="post">
+
+	<label>Enter the splayList Name</label>
+	<input type="text" name="name">
+		<div th:each="songsList: ${pl}">
+		
+		<input type="checkbox" th.name="songs" th.value="${songsList.id}">
+		<label th:text="${songsList.name}"></label>
+	
+	</div>
+	
+	
+	<input type="submit" value="Add Playlist">
+
+</form>
+
+</body>
+</html>
+
+
+ -->

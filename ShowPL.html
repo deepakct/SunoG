@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Showing the Playlist</h1>
+ 
+<table border="2">
+
+<tbody>
+
+<tr>
+
+	<td>ID</td>
+		<td>Plalist Name</td>
+			<td>Songs</td>
+	</tr>
+	
+	<tr th:each="pl : ${pl}">
+		<td th:text="${pl.id}"> </td>
+			<td th:text="${pl.name}"> </td>
+			
+			<td >
+			<ul th:each="s: ${pl.songs}">
+			<li>
+			
+			<audio controls>
+			<!-- <audio controls>
+				<source th:src=${reslist.link} type="audio/mpeg"> </audio> -->
+			
+			
+			<source th:src=${s.link} type="audio/mpeg">
+		
+			
+			</audio>
+				
+			
+			</li>
+			</ul>
+			
+			</td>
+		
+	</tr>
+
+
+
+</tbody>
+
+
+
+</table>
+
+</body>
+</html>
